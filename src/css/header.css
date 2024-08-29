@@ -1,0 +1,130 @@
+
+.header__logo{
+    width: 90px;
+    margin-right: 45px;
+   
+}
+/* .header{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0px 20px ;
+} */
+.header_top{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0px 20px ;
+}
+
+.header__bottom{
+    background-color: #2f3237; 
+   
+}
+.header__bottom ul{
+    list-style: none;
+    padding: 5px 30px 10px 30px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header__bottom ul li{
+    margin-right: 20px;
+    color: white;
+}
+
+.header__search{
+    display: flex;
+   width: 60%;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+.header__search input{
+flex: 1;
+height: 35px;
+padding: 20px;
+border: 0;
+outline: 0;
+border-radius: 5px 0 0 5px ;
+background-color: #d6d4d5;
+}
+
+.searchIcon{
+    padding: 8px;
+    height: 18px;
+    background-color: #c68942;
+}
+
+.header__nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+/* .header_option1{
+font-size: 10px;
+color: white;
+}
+.header_option2{
+    display: block;
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+} */
+
+.signup{
+display: flex;
+margin-left: 10px;
+margin-right: 10px;
+font-size: 40px;
+color: white;
+
+}
+
+.header__optionBasket{
+display: flex;
+color: white;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+
+.header__optionBasket a{
+color: #fff;
+display: flex;
+align-items: center;
+text-decoration: none;
+}
+.header__optionBasket a span{
+    margin-top: -20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color: #000;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.header__bottom ul li img{
+    width: 250px;
+}
+
+.cart{
+    color: white;
+}
+
