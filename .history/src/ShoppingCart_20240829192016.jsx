@@ -3,20 +3,8 @@ import Leaderboard from "./leaderboard00.png";
 import CheckoutProductImg from './p2.png';
 import './css/shopping.css';
 
-function ShoppingCart({cart, removeFromCart}) {
-
-
-
- // Calculate subtotal
-  const calculateSubtotal = () => {
-     return cart?.line_items?.reduce((acc, item) => acc + item.price.raw * item.quantity, 0).toFixed(2);
-       };
-
-
-
-
-
-  console.log("Your cart ", cart);    return (
+function ShoppingCart({cart}) {
+  console.log(cart);    return (
     <div className='checkout'>
       <div className="checkout_left">
         <img src={Leaderboard} className='checkout_ad' alt="Leaderboard Ad" />
@@ -31,21 +19,16 @@ function ShoppingCart({cart, removeFromCart}) {
   
   cart?.line_items?.map(item=>{
     // console.log(cart); // Check the structure of cart before rendering
-    // console.log(item)
-
-
-
 
 
 return   <div className="checkoutProduct"   key={item.id}>
-<img src={item.image?.url} className="checkoutProduct_img" alt="Product" />
-
+<img src={item.image.source} className="checkoutProduct_img" alt="Product" />
 <div className="checkoutProduct_info">
   <p className='checkoutProduct_title'>{item.name}</p>
   <p className='checkoutProduct_price'>
     <strong>{item.price.formatted_with_symbol} * {item.quantity} = ₹ {(item.price.raw * item.quantity).toFixed(2)}</strong> 
   </p>
-  <button onClick={()=>removeFromCart(item.id)}>Remove From Basket</button>
+  <button>Remove From Basket</button>
 </div>
 </div>
   })
@@ -78,28 +61,20 @@ return   <div className="checkoutProduct"   key={item.id}>
         </div>
       </div> */}
 
-
-
-
-      {/* ******************************************************************* */}
-
-
-
-      <div className="checkout_right">
-     <div className="subtotal">
-       <p className='p'>
-          Subtotal ({cart?.total_items || 0} items): 
-           <strong> ₹{calculateSubtotal()}</strong>
-         </p>
-         <small className="subtotal_gift">
-          <input type="checkbox" /> This order contains a gift
-       </small>
-        <div className="subtotalButton">
-           <button className='proceedToCheckOutButton'>Proceed to Checkout</button>
-         </div>
-      </div>
-       </div>
-
+<div className="checkout_right">
+//         <div className="subtotal">
+//           <p className='p'>
+//             Subtotal ({cart?.total_items || 0} items): 
+//             <strong> ₹{calculateSubtotal()}</strong>
+//           </p>
+//           <small className="subtotal_gift">
+//             <input type="checkbox" /> This order contains a gift
+//           </small>
+//           <div className="subtotalButton">
+//             <button className='proceedToCheckOutButton'>Proceed to Checkout</button>
+//           </div>
+//         </div>
+//       </div>
 
     </div>
   );

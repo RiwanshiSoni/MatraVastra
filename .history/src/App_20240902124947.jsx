@@ -13,7 +13,6 @@ import { Switch } from '@mui/material';
 
 function App() {
   const [productsList, setProductsList] = useState([]);
-  const [categoriesList, setCategoriesList] = useState([]);
   const [cart, setCart] = useState(1);
 
 
@@ -26,13 +25,6 @@ setCart(await commerce.cart.retrieve())
 }
 
 
-
-const  fetchCategories =async()=>{
- const categoriesResponse = await commerce.categories.list()
- console.log(categoriesResponse)
- setCategoriesList(categoriesResponse.data)
-}
-
 const addToCart = async(productId,  quantity)=>{
   console.log('addTocart Started ')
   const response = await commerce.cart.add(productId, quantity)
@@ -41,25 +33,21 @@ const addToCart = async(productId,  quantity)=>{
   setCart(cart+1)
 }
 
-const removeFromCart=async(productId)=>{
-  const removeResponse = await commerce.cart.remove(productId)
-  setCart(removeResponse.cart)
+const removeFromCart=async()=>{
+  setCart(await commerce.cart.remove(productId))
 }
-
-
 
 
 useEffect(() => {
   fetchProducts();
   fetchCart(); 
-  fetchCategories()
   // Fetch the cart initially
 }, []);
 
   return (
     <Router>
       <div className='App'>
-        <Header cart={cart}  categoriesList={categoriesList} />
+        <Header cart={cart} />
        
         <Routes>
           <Route 
@@ -70,7 +58,7 @@ useEffect(() => {
                 <div className='banner'>
                   <Banner />
                 </div>
-                <Product productsList = {productsList}  addToCart = {addToCart} 
+                <Product productsList = {productsList}  addToCart = {addToCart}
                 />
                 
               </>
@@ -79,21 +67,18 @@ useEffect(() => {
           <Route 
             exact 
             path='/cart' 
-            element={<ShoppingCart   cart={cart}  removeFromCart={removeFromCart}  />} 
+            element={<ShoppingCart   cart={cart}  />} 
           />
           <Route 
             exact 
             path='/signup' 
             element={<SignUp />} 
           />
-          <Route exact path='/categories/:slug' element={
-      <div style={{ marginBottom: '320px' }}>
-        <Product productsList={productsList} addToCart={addToCart} />
-      </div>
-    } />
-
-         
-        
+          {/* <Route 
+            exact 
+            path='/login' 
+            element={<Login />} 
+          /> */}
         </Routes>
       </div>
     </Router>

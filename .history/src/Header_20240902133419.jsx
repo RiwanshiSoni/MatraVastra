@@ -46,11 +46,8 @@ function Header({cart, categoriesList}) {
           {
 categoriesList?.map(categories=>{
   return  <li  key={categories.id} >
-    <Link to={`categories/${categories.slug}`}>
+    <Link to={`categories/${categories.slug}`}
     {categories.name}
-    </Link>
-   
-   
     </li>
 })
 

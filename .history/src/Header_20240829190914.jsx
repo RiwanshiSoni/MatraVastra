@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-function Header({cart, categoriesList}) {
+function Header({cart}) {
   return (
     <>
     <div className="header">
@@ -42,26 +42,12 @@ function Header({cart, categoriesList}) {
       
       <div className='header__bottom'>
         <ul>
-
-          {
-categoriesList?.map(categories=>{
-  return  <li  key={categories.id} >
-    <Link to={`categories/${categories.slug}`}>
-    {categories.name}
-    </Link>
-   
-   
-    </li>
-})
-
-          }
-         
-          {/* <li>Men T-Shirt</li> */}
-          {/* <li>Women T-Shirt</li> */}
-          {/* <li>Today's Deal</li> */}
-          {/* <li>Men & Women T-Shirts</li>
+          <li>All</li>
+          <li>Men T-Shirt</li>
+          <li>Women T-Shirt</li>
+          <li>Today's Deal</li>
           <li>Customer Service</li>
-          <li>Best Sellers</li> */}
+          <li>Best Sellers</li>
         </ul>
       </div>
     </div>

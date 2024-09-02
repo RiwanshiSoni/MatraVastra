@@ -42,26 +42,13 @@ function Header({cart, categoriesList}) {
       
       <div className='header__bottom'>
         <ul>
-
-          {
-categoriesList?.map(categories=>{
-  return  <li  key={categories.id} >
-    <Link to={`categories/${categories.slug}`}>
-    {categories.name}
-    </Link>
-   
-   
-    </li>
-})
-
-          }
-         
+          <li>All</li>
           {/* <li>Men T-Shirt</li> */}
           {/* <li>Women T-Shirt</li> */}
           {/* <li>Today's Deal</li> */}
-          {/* <li>Men & Women T-Shirts</li>
+          <li>Men & Women T-Shirts</li>
           <li>Customer Service</li>
-          <li>Best Sellers</li> */}
+          <li>Best Sellers</li>
         </ul>
       </div>
     </div>

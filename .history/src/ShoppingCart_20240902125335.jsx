@@ -45,7 +45,7 @@ return   <div className="checkoutProduct"   key={item.id}>
   <p className='checkoutProduct_price'>
     <strong>{item.price.formatted_with_symbol} * {item.quantity} = ₹ {(item.price.raw * item.quantity).toFixed(2)}</strong> 
   </p>
-  <button onClick={()=>removeFromCart(item.id)}>Remove From Basket</button>
+  <button>Remove From Basket</button>
 </div>
 </div>
   })

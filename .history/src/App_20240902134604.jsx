@@ -86,11 +86,9 @@ useEffect(() => {
             path='/signup' 
             element={<SignUp />} 
           />
-          <Route exact path='/categories/:slug' element={
-      <div style={{ marginBottom: '320px' }}>
-        <Product productsList={productsList} addToCart={addToCart} />
-      </div>
-    } />
+          <Route  exact  path='/categories/:slug'   >
+<Product productsList = {productsList}  addToCart = {addToCart} />
+          </Route>
 
          
         
